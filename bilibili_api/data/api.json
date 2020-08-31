@@ -1183,5 +1183,31 @@
                 "comment": "获取分区前十排行榜"
             }
         }
+    },
+    "userlogin": {
+        "logout": {
+            "url": "http://passport.bilibili.com/login?act=exit",
+            "method": "GET",
+            "verify": true,
+            "params": null,
+            "comment": "登出账号"
+        },
+        "QRcode": {
+            "get_url": {
+                "url": "http://passport.bilibili.com/qrcode/getLoginUrl",
+                "method": "GET",
+                "verify": false,
+                "params": null,
+                "comment": "申请二维码URL及oauthKey"
+            },
+            "get_info": {
+                "url": "http://passport.bilibili.com/qrcode/getLoginInfo",
+                "method": "POST",
+                "verify": false,
+                "data": {
+                    "oauthKey": "get_url中获取的oauthKey"
+                }
+            }
+        }
     }
 }

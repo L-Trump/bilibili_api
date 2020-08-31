@@ -51,6 +51,14 @@ class LiveException(BilibiliApiException):
     def __init__(self, msg: str):
         super().__init__(msg)
 
+class LoginException(BilibiliApiException):
+    def __init__(self, code, msg):
+        self.code = code
+        self.msg = msg
+
+    def __str__(self):
+        return "错误代码：%s, 信息：%s" % (self.code, self.msg)
+
 """
 奇怪的异常增加了！
 """
